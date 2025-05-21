@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autopharm - Online Shop</title>
+    <title>Velka Metal Works - Online Shop</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -120,7 +120,7 @@
     </section>
 
     <footer class="bg-gray-100 py-8 px-6 md:px-12 text-center text-gray-600">
-        <p>&copy; 2025 Autopharm. All rights reserved.</p>
+        <p>&copy; 2025 Velka Metal Works. All rights reserved.</p>
         <div class="flex justify-center space-x-6 mt-4">
             <a href="#" class="text-gray-600 hover:text-yellow-600 transition duration-300">Facebook</a>
             <a href="#" class="text-gray-600 hover:text-yellow-600 transition duration-300">Instagram</a>
@@ -131,58 +131,60 @@
     <script>
         // Dummy product data (40 items under 'metal works' category)
         const products = [
-            { id: 1, name: "Modern Steel Gate", price: "KSh 120,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Steel+Gate+1" },
-            { id: 2, name: "Ornate Iron Fence Panel", price: "KSh 15,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Iron+Fence+2" },
-            { id: 3, name: "Sliding Driveway Gate", price: "KSh 180,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Sliding+Gate+3" },
-            { id: 4, name: "Security Grille Window", price: "KSh 8,500", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Window+Grille+4" },
-            { id: 5, name: "Decorative Garden Gate", price: "KSh 25,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Garden+Gate+5" },
-            { id: 6, name: "Balcony Railing - Modern", price: "KSh 45,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Balcony+Railing+1" },
-            { id: 7, name: "Staircase Handrail - Classic", price: "KSh 30,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Stair+Handrail+2" },
-            { id: 8, name: "Glass Balustrade System", price: "KSh 70,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Glass+Balustrade+3" },
-            { id: 9, name: "Juliet Balcony", price: "KSh 35,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Juliet+Balcony+4" },
-            { id: 10, name: "Deck Railing - Custom", price: "KSh 50,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Deck+Railing+5" },
-            { id: 11, name: "Industrial Style Coffee Table", price: "KSh 40,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Coffee+Table+1" },
-            { id: 12, name: "Metal Frame Dining Chair", price: "KSh 18,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Dining+Chair+2" },
-            { id: 13, name: "Bespoke Bookshelf Unit", price: "KSh 75,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Bookshelf+3" },
-            { id: 14, name: "Outdoor Metal Bench", price: "KSh 28,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Outdoor+Bench+4" },
-            { id: 15, name: "Console Table - Minimalist", price: "KSh 32,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Console+Table+5" },
-            { id: 16, name: "Steel Beam for Construction", price: "KSh 90,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Steel+Beam+1" },
-            { id: 17, name: "Custom Steel Truss", price: "KSh 150,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Steel+Truss+2" },
-            { id: 18, name: "Metal Decking Sheet", price: "KSh 5,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Metal+Decking+3" },
-            { id: 19, name: "Reinforcement Bars (Rebar)", price: "KSh 2,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Rebar+4" },
-            { id: 20, name: "Steel Columns", price: "KSh 60,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Steel+Column+5" },
-            { id: 21, name: "Artistic Metal Sculpture", price: "KSh 250,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Sculpture+6" },
-            { id: 22, name: "Wrought Iron Garden Arch", price: "KSh 38,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Garden+Arch+6" },
-            { id: 23, name: "Perforated Metal Screen", price: "KSh 12,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Metal+Screen+6" },
-            { id: 24, name: "Heavy Duty Work Bench", price: "KSh 65,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Work+Bench+6" },
-            { id: 25, name: "Industrial Staircase", price: "KSh 220,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Industrial+Stair+6" },
-            { id: 26, name: "Architectural Metal Cladding", price: "KSh 95,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Cladding+7" },
-            { id: 27, name: "Custom Metal Planters", price: "KSh 10,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Planters+7" },
-            { id: 28, name: "Pool Fence - Aluminum", price: "KSh 40,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Pool+Fence+7" },
-            { id: 29, name: "Safety Handrail - Outdoor", price: "KSh 22,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Safety+Handrail+7" },
-            { id: 30, name: "Metal Art Wall Decor", price: "KSh 18,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Wall+Decor+8" },
-            { id: 31, name: "Custom Metal Signage", price: "KSh 30,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Signage+9" },
-            { id: 32, name: "Industrial Pipe Shelving", price: "KSh 20,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Shelving+10" },
-            { id: 33, name: "Decorative Metal Screen", price: "KSh 16,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Screen+11" },
-            { id: 34, name: "Modern Privacy Fence", price: "KSh 55,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Privacy+Fence+12" },
-            { id: 35, name: "Commercial Handrail System", price: "KSh 70,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Commercial+Handrail+13" },
-            { id: 36, name: "Architectural Staircase", price: "KSh 300,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Arch+Staircase+14" },
-            { id: 37, name: "Metal Wall Art Panel", price: "KSh 12,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Wall+Art+15" },
-            { id: 38, name: "Custom Metal Desk", price: "KSh 85,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Metal+Desk+16" },
-            { id: 39, name: "Industrial Mezzanine Flooring", price: "KSh 110,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Mezzanine+17" },
-            { id: 40, name: "Decorative Metal Gate Latch", price: "KSh 3,500", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Gate+Latch+18" }
+            // Note: These are descriptive placeholders. For a live site, you would replace these with actual image URLs hosted on your server or a CDN.
+            { id: 1, name: "Modern Steel Gate", price: "KSh 120,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/c7d2fe/374151?text=Modern+Steel+Gate" },
+            { id: 2, name: "Ornate Iron Fence Panel", price: "KSh 15,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/a78bfa/374151?text=Ornate+Iron+Fence" },
+            { id: 3, name: "Sliding Driveway Gate", price: "KSh 180,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/fbcfe8/374151?text=Sliding+Driveway+Gate" },
+            { id: 4, name: "Security Grille Window", price: "KSh 8,500", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/bfdbfe/374151?text=Security+Window+Grille" },
+            { id: 5, name: "Decorative Garden Gate", price: "KSh 25,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/d1fae5/374151?text=Decorative+Garden+Gate" },
+            { id: 6, name: "Balcony Railing - Modern", price: "KSh 45,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/fef3c7/374151?text=Modern+Balcony+Railing" },
+            { id: 7, name: "Staircase Handrail - Classic", price: "KSh 30,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/fecaca/374151?text=Classic+Stair+Handrail" },
+            { id: 8, name: "Glass Balustrade System", price: "KSh 70,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/cffafe/374151?text=Glass+Balustrade" },
+            { id: 9, name: "Juliet Balcony", price: "KSh 35,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e9d5ff/374151?text=Juliet+Balcony" },
+            { id: 10, name: "Deck Railing - Custom", price: "KSh 50,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/dbeafe/374151?text=Custom+Deck+Railing" },
+            { id: 11, name: "Industrial Style Coffee Table", price: "KSh 40,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/fecdd3/374151?text=Industrial+Coffee+Table" },
+            { id: 12, name: "Metal Frame Dining Chair", price: "KSh 18,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/ccfbf1/374151?text=Metal+Dining+Chair" },
+            { id: 13, name: "Bespoke Bookshelf Unit", price: "KSh 75,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/fce7f3/374151?text=Bespoke+Bookshelf" },
+            { id: 14, name: "Outdoor Metal Bench", price: "KSh 28,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/dcfce7/374151?text=Outdoor+Metal+Bench" },
+            { id: 15, name: "Console Table - Minimalist", price: "KSh 32,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e7ff/374151?text=Minimalist+Console" },
+            { id: 16, name: "Steel Beam for Construction", price: "KSh 90,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/fee2e2/374151?text=Construction+Steel+Beam" },
+            { id: 17, name: "Custom Steel Truss", price: "KSh 150,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/fff7ed/374151?text=Custom+Steel+Truss" },
+            { id: 18, name: "Metal Decking Sheet", price: "KSh 5,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e5e7eb/374151?text=Metal+Decking+Sheet" },
+            { id: 19, name: "Reinforcement Bars (Rebar)", price: "KSh 2,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/f3e8ff/374151?text=Reinforcement+Rebar" },
+            { id: 20, name: "Steel Columns", price: "KSh 60,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/d1fae5/374151?text=Structural+Steel+Column" },
+            { id: 21, name: "Artistic Metal Sculpture", price: "KSh 250,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/bfdbfe/374151?text=Artistic+Metal+Sculpture" },
+            { id: 22, name: "Wrought Iron Garden Arch", price: "KSh 38,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/fbcfe8/374151?text=Wrought+Iron+Garden+Arch" },
+            { id: 23, name: "Perforated Metal Screen", price: "KSh 12,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/a78bfa/374151?text=Perforated+Metal+Screen" },
+            { id: 24, name: "Heavy Duty Work Bench", price: "KSh 65,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/c7d2fe/374151?text=Heavy+Duty+Work+Bench" },
+            { id: 25, name: "Industrial Staircase", price: "KSh 220,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/fef3c7/374151?text=Industrial+Metal+Staircase" },
+            { id: 26, name: "Architectural Metal Cladding", price: "KSh 95,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/fecaca/374151?text=Architectural+Cladding" },
+            { id: 27, name: "Custom Metal Planters", price: "KSh 10,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/cffafe/374151?text=Custom+Metal+Planters" },
+            { id: 28, name: "Pool Fence - Aluminum", price: "KSh 40,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e9d5ff/374151?text=Aluminum+Pool+Fence" },
+            { id: 29, name: "Safety Handrail - Outdoor", price: "KSh 22,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/dbeafe/374151?text=Outdoor+Safety+Handrail" },
+            { id: 30, name: "Metal Art Wall Decor", price: "KSh 18,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/fecdd3/374151?text=Metal+Wall+Art+Decor" },
+            { id: 31, name: "Custom Metal Signage", price: "KSh 30,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/ccfbf1/374151?text=Custom+Metal+Signage" },
+            { id: 32, name: "Industrial Pipe Shelving", price: "KSh 20,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/fce7f3/374151?text=Industrial+Pipe+Shelving" },
+            { id: 33, name: "Decorative Metal Screen", price: "KSh 16,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/dcfce7/374151?text=Decorative+Metal+Screen" },
+            { id: 34, name: "Modern Privacy Fence", price: "KSh 55,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e7ff/374151?text=Modern+Privacy+Fence" },
+            { id: 35, name: "Commercial Handrail System", price: "KSh 70,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/fee2e2/374151?text=Commercial+Handrail" },
+            { id: 36, name: "Architectural Staircase", price: "KSh 300,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/fff7ed/374151?text=Architectural+Staircase" },
+            { id: 37, name: "Metal Wall Art Panel", price: "KSh 12,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e5e7eb/374151?text=Metal+Wall+Art+Panel" },
+            { id: 38, name: "Custom Metal Desk", price: "KSh 85,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/f3e8ff/374151?text=Custom+Metal+Desk" },
+            { id: 39, name: "Industrial Mezzanine Flooring", price: "KSh 110,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/d1fae5/374151?text=Industrial+Mezzanine" },
+            { id: 40, name: "Decorative Metal Gate Latch", price: "KSh 3,500", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/bfdbfe/374151?text=Decorative+Gate+Latch" }
         ];
 
         // Dummy project data
         const projects = [
-            { id: 1, name: "Luxury Estate Gate Installation", description: "Custom-designed and fabricated gate for a high-end residential property.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Gate+A" },
-            { id: 2, name: "Commercial Building Facade", description: "Architectural metal cladding for a modern office building.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Facade+B" },
-            { id: 3, name: "Artistic Staircase Design", description: "A unique helical staircase with custom metal railings.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Stair+C" },
-            { id: 4, name: "Restaurant Interior Fit-out", description: "Bespoke metal furniture and decorative elements for a new restaurant.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Restaurant+D" },
-            { id: 5, name: "Bridge Railing Replacement", description: "Durable and aesthetically pleasing railings for a public bridge.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Bridge+E" },
-            { id: 6, name: "Industrial Mezzanine Construction", description: "Installation of a robust structural steel mezzanine for a warehouse.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Mezzanine+F" },
-            { id: 7, name: "Garden Sculpture Commission", description: "Large-scale abstract metal sculpture for a private garden.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Sculpture+G" },
-            { id: 8, name: "Custom Balcony Extension", description: "Expanded and reinforced balcony structure with new railings.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Balcony+H" }
+            // Note: These are descriptive placeholders. For a live site, you would replace these with actual image URLs hosted on your server or a CDN.
+            { id: 1, name: "Luxury Estate Gate Installation", description: "Custom-designed and fabricated gate for a high-end residential property.", imageUrl: "https://placehold.co/600x400/c7d2fe/374151?text=Luxury+Gate+Project" },
+            { id: 2, name: "Commercial Building Facade", description: "Architectural metal cladding for a modern office building.", imageUrl: "https://placehold.co/600x400/a78bfa/374151?text=Commercial+Facade+Project" },
+            { id: 3, name: "Artistic Staircase Design", description: "A unique helical staircase with custom metal railings.", imageUrl: "https://placehold.co/600x400/fbcfe8/374151?text=Artistic+Staircase+Project" },
+            { id: 4, name: "Restaurant Interior Fit-out", description: "Bespoke metal furniture and decorative elements for a new restaurant.", imageUrl: "https://placehold.co/600x400/bfdbfe/374151?text=Restaurant+Fit-out+Project" },
+            { id: 5, name: "Bridge Railing Replacement", description: "Durable and aesthetically pleasing railings for a public bridge.", imageUrl: "https://placehold.co/600x400/d1fae5/374151?text=Bridge+Railing+Project" },
+            { id: 6, name: "Industrial Mezzanine Construction", description: "Installation of a robust structural steel mezzanine for a warehouse.", imageUrl: "https://placehold.co/600x400/fef3c7/374151?text=Mezzanine+Construction+Project" },
+            { id: 7, name: "Garden Sculpture Commission", description: "Large-scale abstract metal sculpture for a private garden.", imageUrl: "https://placehold.co/600x400/fecaca/374151?text=Garden+Sculpture+Project" },
+            { id: 8, name: "Custom Balcony Extension", description: "Expanded and reinforced balcony structure with new railings.", imageUrl: "https://placehold.co/600x400/cffafe/374151?text=Balcony+Extension+Project" }
         ];
 
 
