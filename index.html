@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velka Metal Works - Online Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff; /* White background */
+            color: #1a202c; /* Dark text color for contrast */
+        }
+        /* Custom scrollbar for better aesthetics on light background */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; /* Light gray track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e0; /* Medium gray thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0; /* Darker gray on hover */
+        }
+
+        /* Custom animation for hero section button */
+        @keyframes pulse-grow {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(251, 191, 36, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+            }
+        }
+        .animate-pulse-grow {
+            animation: pulse-grow 2s infinite;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-white shadow-lg py-4 px-6 md:px-12 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-yellow-600 rounded-lg p-2 hover:text-yellow-700 transition duration-300">Velka Metal Works</a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#" class="text-gray-800 hover:text-yellow-600 transition duration-300 text-lg font-medium">Home</a></li>
+                <li><a href="#shop" class="text-gray-800 hover:text-yellow-600 transition duration-300 text-lg font-medium">Shop</a></li>
+                <li><a href="#projects" class="text-gray-800 hover:text-yellow-600 transition duration-300 text-lg font-medium">Our Projects</a></li>
+                <li><a href="#signin" class="text-gray-800 hover:text-yellow-600 transition duration-300 text-lg font-medium">Sign In</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 hover:text-yellow-600 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-gray-900 bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-6">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-gray-300 hover:text-yellow-500 focus:outline-none">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <a href="#" class="text-gray-300 hover:text-yellow-500 transition duration-300 text-3xl font-medium" onclick="hideMobileMenu()">Home</a>
+            <a href="#shop" class="text-gray-300 hover:text-yellow-500 transition duration-300 text-3xl font-medium" onclick="hideMobileMenu()">Shop</a>
+            <a href="#projects" class="text-gray-300 hover:text-yellow-500 transition duration-300 text-3xl font-medium" onclick="hideMobileMenu()">Our Projects</a>
+            <a href="#signin" class="text-gray-300 hover:text-yellow-500 transition duration-300 text-3xl font-medium" onclick="hideMobileMenu()">Sign In</a>
+        </div>
+    </header>
+
+    <section class="relative bg-cover bg-center h-96 md:h-screen flex items-center justify-center text-center p-4"
+        style="background-image: url('https://placehold.co/1920x1080/e0e0e0/4a5568?text=Expert+Metal+Fabrication');">
+        <div class="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
+        <div class="z-10 text-white max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">Crafting Excellence in Metal Fabrication</h1>
+            <p class="text-lg md:text-xl mb-8 drop-shadow-md">Precision, Durability, and Artistry in Every Piece.</p>
+            <a href="#shop" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 animate-pulse-grow">
+                Explore Our Products
+            </a>
+        </div>
+    </section>
+
+    <section id="shop" class="container mx-auto py-16 px-6 md:px-12">
+        <h2 class="text-4xl font-bold text-center mb-12 text-yellow-600">Our Products</h2>
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            </div>
+    </section>
+
+    <section id="projects" class="container mx-auto py-16 px-6 md:px-12">
+        <h2 class="text-4xl font-bold text-center mb-12 text-yellow-600">Our Projects Gallery</h2>
+        <div id="project-gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </section>
+
+    <section id="signin" class="py-16 px-6 md:px-12 container mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12 text-yellow-600">Sign In</h2>
+        <div class="max-w-md mx-auto bg-white p-8 rounded-xl shadow-xl border border-gray-200">
+            <form class="space-y-6">
+                <div>
+                    <label for="username" class="block text-gray-800 text-lg font-medium mb-2">Username or Email</label>
+                    <input type="text" id="username" name="username" class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-600" placeholder="Enter your username or email">
+                </div>
+                <div>
+                    <label for="password" class="block text-gray-800 text-lg font-medium mb-2">Password</label>
+                    <input type="password" id="password" name="password" class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-600" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    Sign In
+                </button>
+                <p class="text-center text-gray-600 text-sm">
+                    Don't have an account? <a href="#" class="text-yellow-600 hover:underline">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 py-8 px-6 md:px-12 text-center text-gray-600">
+        <p>&copy; 2025 Velka Metal Works. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 mt-4">
+            <a href="#" class="text-gray-600 hover:text-yellow-600 transition duration-300">Facebook</a>
+            <a href="#" class="text-gray-600 hover:text-yellow-600 transition duration-300">Instagram</a>
+            <a href="#" class="text-gray-600 hover:text-yellow-600 transition duration-300">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+        // Dummy product data (40 items under 'metal works' category)
+        const products = [
+            { id: 1, name: "Modern Steel Gate", price: "KSh 120,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Steel+Gate+1" },
+            { id: 2, name: "Ornate Iron Fence Panel", price: "KSh 15,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Iron+Fence+2" },
+            { id: 3, name: "Sliding Driveway Gate", price: "KSh 180,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Sliding+Gate+3" },
+            { id: 4, name: "Security Grille Window", price: "KSh 8,500", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Window+Grille+4" },
+            { id: 5, name: "Decorative Garden Gate", price: "KSh 25,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Garden+Gate+5" },
+            { id: 6, name: "Balcony Railing - Modern", price: "KSh 45,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Balcony+Railing+1" },
+            { id: 7, name: "Staircase Handrail - Classic", price: "KSh 30,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Stair+Handrail+2" },
+            { id: 8, name: "Glass Balustrade System", price: "KSh 70,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Glass+Balustrade+3" },
+            { id: 9, name: "Juliet Balcony", price: "KSh 35,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Juliet+Balcony+4" },
+            { id: 10, name: "Deck Railing - Custom", price: "KSh 50,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Deck+Railing+5" },
+            { id: 11, name: "Industrial Style Coffee Table", price: "KSh 40,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Coffee+Table+1" },
+            { id: 12, name: "Metal Frame Dining Chair", price: "KSh 18,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Dining+Chair+2" },
+            { id: 13, name: "Bespoke Bookshelf Unit", price: "KSh 75,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Bookshelf+3" },
+            { id: 14, name: "Outdoor Metal Bench", price: "KSh 28,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Outdoor+Bench+4" },
+            { id: 15, name: "Console Table - Minimalist", price: "KSh 32,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Console+Table+5" },
+            { id: 16, name: "Steel Beam for Construction", price: "KSh 90,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Steel+Beam+1" },
+            { id: 17, name: "Custom Steel Truss", price: "KSh 150,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Steel+Truss+2" },
+            { id: 18, name: "Metal Decking Sheet", price: "KSh 5,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Metal+Decking+3" },
+            { id: 19, name: "Reinforcement Bars (Rebar)", price: "KSh 2,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Rebar+4" },
+            { id: 20, name: "Steel Columns", price: "KSh 60,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Steel+Column+5" },
+            { id: 21, name: "Artistic Metal Sculpture", price: "KSh 250,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Sculpture+6" },
+            { id: 22, name: "Wrought Iron Garden Arch", price: "KSh 38,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Garden+Arch+6" },
+            { id: 23, name: "Perforated Metal Screen", price: "KSh 12,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Metal+Screen+6" },
+            { id: 24, name: "Heavy Duty Work Bench", price: "KSh 65,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Work+Bench+6" },
+            { id: 25, name: "Industrial Staircase", price: "KSh 220,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Industrial+Stair+6" },
+            { id: 26, name: "Architectural Metal Cladding", price: "KSh 95,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Cladding+7" },
+            { id: 27, name: "Custom Metal Planters", price: "KSh 10,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Planters+7" },
+            { id: 28, name: "Pool Fence - Aluminum", price: "KSh 40,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Pool+Fence+7" },
+            { id: 29, name: "Safety Handrail - Outdoor", price: "KSh 22,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Safety+Handrail+7" },
+            { id: 30, name: "Metal Art Wall Decor", price: "KSh 18,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Wall+Decor+8" },
+            { id: 31, name: "Custom Metal Signage", price: "KSh 30,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Signage+9" },
+            { id: 32, name: "Industrial Pipe Shelving", price: "KSh 20,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Shelving+10" },
+            { id: 33, name: "Decorative Metal Screen", price: "KSh 16,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Screen+11" },
+            { id: 34, name: "Modern Privacy Fence", price: "KSh 55,000", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Privacy+Fence+12" },
+            { id: 35, name: "Commercial Handrail System", price: "KSh 70,000", category: "Railings & Balconies", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Commercial+Handrail+13" },
+            { id: 36, name: "Architectural Staircase", price: "KSh 300,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Arch+Staircase+14" },
+            { id: 37, name: "Metal Wall Art Panel", price: "KSh 12,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Wall+Art+15" },
+            { id: 38, name: "Custom Metal Desk", price: "KSh 85,000", category: "Custom Furniture", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Metal+Desk+16" },
+            { id: 39, name: "Industrial Mezzanine Flooring", price: "KSh 110,000", category: "Structural Steel", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Mezzanine+17" },
+            { id: 40, name: "Decorative Metal Gate Latch", price: "KSh 3,500", category: "Gates & Fences", imageUrl: "https://placehold.co/400x300/e0e0e0/4a5568?text=Gate+Latch+18" }
+        ];
+
+        // Dummy project data
+        const projects = [
+            { id: 1, name: "Luxury Estate Gate Installation", description: "Custom-designed and fabricated gate for a high-end residential property.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Gate+A" },
+            { id: 2, name: "Commercial Building Facade", description: "Architectural metal cladding for a modern office building.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Facade+B" },
+            { id: 3, name: "Artistic Staircase Design", description: "A unique helical staircase with custom metal railings.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Stair+C" },
+            { id: 4, name: "Restaurant Interior Fit-out", description: "Bespoke metal furniture and decorative elements for a new restaurant.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Restaurant+D" },
+            { id: 5, name: "Bridge Railing Replacement", description: "Durable and aesthetically pleasing railings for a public bridge.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Bridge+E" },
+            { id: 6, name: "Industrial Mezzanine Construction", description: "Installation of a robust structural steel mezzanine for a warehouse.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Mezzanine+F" },
+            { id: 7, name: "Garden Sculpture Commission", description: "Large-scale abstract metal sculpture for a private garden.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Sculpture+G" },
+            { id: 8, name: "Custom Balcony Extension", description: "Expanded and reinforced balcony structure with new railings.", imageUrl: "https://placehold.co/600x400/e0e0e0/4a5568?text=Project+Balcony+H" }
+        ];
+
+
+        // Function to render products
+        function renderProducts() {
+            const productGrid = document.getElementById('product-grid');
+            productGrid.innerHTML = ''; // Clear existing products
+
+            products.forEach(product => {
+                const productCard = `
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:border-yellow-600">
+                        <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">${product.name}</h3>
+                            <p class="text-gray-700 text-lg font-bold mb-4">${product.price}</p>
+                            <button class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 hover:shadow-lg">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                `;
+                productGrid.innerHTML += productCard;
+            });
+        }
+
+        // Function to render projects
+        function renderProjects() {
+            const projectGallery = document.getElementById('project-gallery');
+            projectGallery.innerHTML = ''; // Clear existing projects
+
+            projects.forEach(project => {
+                const projectCard = `
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:border-yellow-600">
+                        <img src="${project.imageUrl}" alt="${project.name}" class="w-full h-56 object-cover">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">${project.name}</h3>
+                            <p class="text-gray-700 text-sm">${project.description}</p>
+                        </div>
+                    </div>
+                `;
+                projectGallery.innerHTML += projectCard;
+            });
+        }
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            hideMobileMenu();
+        });
+
+        function hideMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Initial render of products and projects when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            renderProjects();
+        });
+    </script>
+</body>
+</html>
