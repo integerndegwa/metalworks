@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autopharm - Online Shop</title>
+    <title>Autopharm</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -88,7 +88,7 @@
 <body class="antialiased">
     <header class="bg-white shadow-lg py-4 px-6 md:px-12 sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-yellow-600 rounded-lg p-2 hover:text-yellow-700 transition duration-300">Authopharm</a>
+            <a href="#" class="text-3xl font-bold text-yellow-600 rounded-lg p-2 hover:text-yellow-700 transition duration-300">Autopharm</a>
             <ul class="hidden md:flex space-x-8 items-center">
                 <li><a href="#" class="text-gray-800 hover:text-yellow-600 transition duration-300 text-lg font-medium">Home</a></li>
                 <li><a href="#shop" class="text-gray-800 hover:text-yellow-600 transition duration-300 text-lg font-medium">Shop</a></li>
@@ -97,14 +97,14 @@
                 <li>
                     <a href="#" class="text-gray-800 hover:text-yellow-600 transition duration-300 text-lg font-medium relative">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        <span id="cart-count-desktop" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
                     </a>
                 </li>
             </ul>
             <div class="flex items-center md:hidden space-x-4">
                 <a href="#" class="text-gray-800 hover:text-yellow-600 transition duration-300 text-lg font-medium relative">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    <span id="cart-count-mobile" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
                 </a>
                 <button id="mobile-menu-button" class="text-gray-800 hover:text-yellow-600 focus:outline-none">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -169,7 +169,7 @@
     </section>
 
     <footer class="bg-gray-100 py-8 px-6 md:px-12 text-center text-gray-600">
-        <p>&copy; 2025 Authopharm. All rights reserved.</p>
+        <p>&copy; Autopharm. All rights reserved.</p>
         <div class="flex justify-center space-x-6 mt-4">
             <a href="#" class="text-gray-600 hover:text-yellow-600 transition duration-300">Facebook</a>
             <a href="#" class="text-gray-600 hover:text-yellow-600 transition duration-300">Instagram</a>
@@ -240,6 +240,22 @@
             { id: 8, name: "Custom Balcony Extension", description: "Expanded and reinforced balcony structure with new railings.", imageUrl: "https://placehold.co/600x400/cffafe/374151?text=Balcony+Extension+Project" }
         ];
 
+        // Global variable for cart item count
+        let cartItemCount = 0;
+
+        // Get references to the cart count display elements
+        const cartCountDesktop = document.getElementById('cart-count-desktop');
+        const cartCountMobile = document.getElementById('cart-count-mobile');
+
+        // Function to update the cart count display
+        function updateCartDisplay() {
+            if (cartCountDesktop) {
+                cartCountDesktop.textContent = cartItemCount;
+            }
+            if (cartCountMobile) {
+                cartCountMobile.textContent = cartItemCount;
+            }
+        }
 
         // Function to render products
         function renderProducts() {
@@ -247,19 +263,35 @@
             productGrid.innerHTML = ''; // Clear existing products
 
             products.forEach(product => {
-                const productCard = `
-                    <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:border-yellow-600">
-                        <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">${product.name}</h3>
-                            <p class="text-gray-700 text-lg font-bold mb-4">${product.price}</p>
-                            <button class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 hover:shadow-lg">
-                                Add to Cart
-                            </button>
-                        </div>
+                const productCard = document.createElement('div');
+                productCard.className = "bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:border-yellow-600";
+                productCard.innerHTML = `
+                    <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">${product.name}</h3>
+                        <p class="text-gray-700 text-lg font-bold mb-4">${product.price}</p>
+                        <button class="add-to-cart-btn w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 hover:shadow-lg" data-product-id="${product.id}">
+                            Add to Cart
+                        </button>
                     </div>
                 `;
-                productGrid.innerHTML += productCard;
+                productGrid.appendChild(productCard);
+            });
+
+            // Add event listeners to all "Add to Cart" buttons
+            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    cartItemCount++;
+                    updateCartDisplay();
+                    // Optional: Add a visual feedback that item was added
+                    button.textContent = "Added!";
+                    button.classList.add('bg-green-500', 'hover:bg-green-600');
+                    setTimeout(() => {
+                        button.textContent = "Add to Cart";
+                        button.classList.remove('bg-green-500', 'hover:bg-green-600');
+                        button.classList.add('bg-yellow-600', 'hover:bg-yellow-700');
+                    }, 1000); // Reset button text after 1 second
+                });
             });
         }
 
@@ -305,6 +337,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderProducts();
             renderProjects();
+            updateCartDisplay(); // Initialize cart display
         });
     </script>
 </body>
